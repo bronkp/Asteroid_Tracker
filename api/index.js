@@ -24,7 +24,7 @@ app.get('/raw', async (req, res) => {
 })
 app.get('/', async (req, res) => {
   //for local testing
-    res.sendFile('/home/home.html')
+    res.sendFile('home/home.html')
     //for vercel
   })
 
