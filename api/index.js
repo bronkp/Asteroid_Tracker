@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('/public'));
 var path = require('path')
 const port = 3000
 app.get('/raw', async (req, res) => {
@@ -23,8 +23,9 @@ app.get('/raw', async (req, res) => {
   }
 })
 app.get('/', async (req, res) => {
-  
-    res.sendFile('/public/home/home.html')
+  //for local testing
+    res.sendFile('/home/home.html')
+    //for vercel
   })
 
 
