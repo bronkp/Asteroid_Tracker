@@ -24,7 +24,7 @@ app.get('/raw', async (req, res) => {
 })
 app.get('/', async (req, res) => {
   
-    res.sendFile('home.html', {root: __dirname })
+    res.sendFile('/public/home/home.html')
   })
 
 
