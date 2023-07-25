@@ -1,0 +1,179 @@
+body{
+    overflow-x: hidden;
+    font-family: 'Space Mono', monospace;
+   font-weight: 400;
+}
+#bg {
+    z-index: 0;
+    filter: blur(.3px);
+    position: fixed; top:0; left:0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/background.jpg') ;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+
+   
+  }
+#count{
+    z-index: 110;
+    font-size: larger;
+    
+}
+.header{
+    display:flex;
+    position:sticky;
+    flex-direction: column;
+    top:0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+   height: 5em;
+    z-index: 1100000;
+    text-align: center;
+    color:aliceblue;
+    background-color: rgb(103, 100, 100);
+    
+    width:100vw;
+}
+#records{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1em;
+    width:75vw;
+    min-width: 32em;
+    background-color: rgb(213, 215, 215);
+    z-index: 1100;
+}
+#page{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+    position: absolute;
+    width:100vw;
+    height:100vh;
+    left:0;
+    top:0;
+}
+#bigContainer{
+    position: relative;
+    padding:1em;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: first baseline;
+    align-items: baseline;
+}
+#maxAsteroid{
+    position: relative;
+    display: flex;
+    justify-content: center;
+  align-items:flex-end;
+    height:30em;
+    width: 30em;
+    background-color: #555;
+    border-radius: 50%;
+}
+#minAsteroid{
+    position: relative;
+
+    height:30em;
+    width: 30em;
+    background-color: #8b8a8a;
+    border-radius: 50%;
+}
+#footballField{
+    background-image: url('/football.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 100px;
+}
+#asteroidSpeed{
+    background-color: #555;
+    width:30em;
+    height: 0.3em;
+}
+#blackbird{
+    background-color: #555;
+    width:30em;
+    height: 0.3em;
+}
+#closestContainer{
+    position: relative;
+    justify-content: flex-start;
+    height:5em;
+    width:33em;
+}
+#earth{
+    margin: 1em;
+   background-image: url('/earth.jpg'); 
+    
+    top:0em;
+    background-size: contain;
+    border-radius: 50%;
+   height: 0.9113039674em;
+   width:  0.9113039674em;
+}
+#moon{
+    position: absolute;
+    left:30em;
+    top:.5em;
+    background-size: contain;
+    border-radius: 50%;
+   background-image: url('/earth.jpg'); 
+   height: 0.5em;
+   width: 0.5em;   
+}
+.jupiter{
+ background-color: aqua;
+   position: relative;
+    background-size: cover;
+    
+    border-radius: 50%;
+   background-image: url('/jupiter.PNG'); 
+   height: 5em;
+   width: 5em;   
+}
+#earthJupiters{
+    
+    display:flex;
+    flex-direction: row;
+    
+}
+.record_head{
+    display: flex;
+    align-items: center;
+    user-select: none;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    height: 15em;
+    width:100%;
+    background-color: #8b8a8a;
+}
+h1{
+    font-size: 4em;
+  margin-left: 1em;
+font-family: 'Space Mono', monospace;
+}
+.stats{background-color: #8b8a8a;color:aliceblue;padding:1em; margin:1em}
+#big_jupiter{
+    background-image: url('/jupiter.PNG'); 
+    height: 10em;
+    width: 10em;  
+    background-size: cover;
+    
+    border-radius: 50%;
+}
+#earth_scale{
+    align-items: center;
+   padding: 4em;
+   position: relative;
+    display: flex;
+    flex-direction: row;
+    
+}
