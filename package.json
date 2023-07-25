@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "vercel-build":"echo hello"
+    "vercel-build": "echo hello"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vercel/edge-config": "^0.2.1",
     "express": "^4.18.2"
   }
 }

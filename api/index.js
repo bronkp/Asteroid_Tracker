@@ -1,3 +1,4 @@
+import { get } from '@vercel/edge-config'
 const express = require('express')
 const app = express()
 app.use(express.static(__dirname + '/public'));
@@ -26,7 +27,10 @@ app.get('/', async (req, res) => {
   
     res.sendFile('/home/home.html', {root: path.join(__dirname, 'public')})
   })
-
+  app.get('/test', async (req, res) => {
+    const greeting = await get('greeting');
+    res.send({res:greeting})
+  })
 
 app.listen(port, () => {
   console.log(`Tracking asteroids at port: ${port}`)
