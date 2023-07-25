@@ -28,8 +28,8 @@ app.get('/', async (req, res) => {
     res.sendFile('/home/home.html', {root: path.join(__dirname, 'public')})
   })
   app.get('/test', async (req, res) => {
-    const greeting = await get('greeting');
-    res.send({res:greeting})
+    //const greeting = await get('greeting');
+    res.send({res:'greeting'})
   })
 
 app.listen(port, () => {
