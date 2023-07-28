@@ -153,7 +153,7 @@ body{
     margin-bottom: 1em;
     height: 15em;
     width:100%;
-    background-color: #8b8a8a;
+    background-color: #838383;
 }
 h1{
     font-size: 4em;
@@ -177,3 +177,30 @@ font-family: 'Space Mono', monospace;
     flex-direction: row;
     
 }
+#about{
+    padding: 1em;
+    position: absolute;
+    justify-content: center;
+    left: 0; 
+    right: 0; 
+    top:0;
+    height:100vh;
+    margin-left: auto; 
+    margin-right: auto;
+    width:30vw;
+    color:white;
+    background-color: #8b8a8a;
+    z-index: 1000000;
+}
+#about_bg {
+    z-index: 0;
+    opacity: 0.9;
+    position: fixed; top:0; left:0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/about_bg.jpg') ;
+    background-size: cover;
+background-position: 0em;
+
+  }
+  a{color: rgb(176, 238, 238);}
