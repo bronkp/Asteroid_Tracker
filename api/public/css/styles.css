@@ -9,7 +9,7 @@ body{
     position: fixed; top:0; left:0;
     width: 100vw;
     height: 100vh;
-    background-image: url('/home_bg.jpg') ;
+    background-image: url('../home_bg.jpg') ;
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
