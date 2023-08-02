@@ -78,7 +78,7 @@ app.get("/cron", async (req, res) => {
         }
       });
 cronResult = {biggest:biggest,fastest:fastest,closest:closest,total_objects:objects.length,hazardous:count}
-    }
+}
 
   try {
 
