@@ -5,6 +5,9 @@ body {
   font-weight: 400;
 }
 button {
+ 
+        color: #000;
+     
   cursor: pointer;
   margin-bottom: 1em;
   font-weight: 700;
