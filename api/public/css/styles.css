@@ -57,7 +57,7 @@ button {
    overflow-wrap: normal;
     min-width: 32em;
     background-attachment: fixed;
-    background-image: linear-gradient( rgb(204, 224, 251),rgb(213, 215, 215) );
+    background-image: linear-gradient( rgb(225, 235, 250),rgb(213, 215, 215) );
     background-color: rgb(213, 215, 215);
     z-index: 1100;
 }
