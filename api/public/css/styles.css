@@ -80,11 +80,13 @@ button {
 }
 #bigContainer {
   position: relative;
-  padding: 1em;
   background-color: aliceblue;
+  width:32em;
+  height:32em;
+  padding-top: 1em;
   display: flex;
-  justify-content: first baseline;
   align-items: baseline;
+  justify-content: center;
 }
 #maxAsteroid {
   position: relative;
@@ -182,14 +184,22 @@ h1 {
   font-family: "Space Mono", monospace;
 }
 .stats {
+    display: flex;
   background-color: #cccbcb;
   color: rgb(62, 62, 63);
-  text-align: center;
+
+
 width: 75vw;
+
 padding-top: 1em;
 padding-bottom: 1em;
   min-width: 32em;
 }
+.stats p{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+#fastContainer{padding-left: 1em;}
 #big_jupiter {
   background-image: url("/jupiter.PNG");
   height: 10em;
