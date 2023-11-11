@@ -77,7 +77,7 @@ app.get("/cron", async (req, res) => {
           Object.assign(closest, object);
         }
       });
-cronResult = {biggest:biggest,fastest:fastest,closest:closest,total_objects:objects.length,hazardous:count}
+cronResult = {updated:today,biggest:biggest,fastest:fastest,closest:closest,total_objects:objects.length,hazardous:count}
 }
 
   try {
