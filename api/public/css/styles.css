@@ -4,6 +4,7 @@ body {
   font-family: "Space Mono", monospace;
   font-weight: 400;
 }
+
 button {
  
         color: #000;
@@ -40,7 +41,6 @@ button {
   justify-content: center;
   align-items: center;
   z-index: 1100000;
-  text-align: center;
   color: aliceblue;
   background-image: linear-gradient(rgb(121, 121, 120), rgb(168, 168, 168));
 
@@ -182,8 +182,9 @@ button {
   );
 }
 h1 {
+  align-items: center;
+  justify-content: center;
   font-size: 4em;
-  margin-left: 1em;
   font-family: "Space Mono", monospace;
 }
 .stats {
@@ -238,8 +239,7 @@ padding-bottom: 1em;
   #about {
   }
 }
-.header {
-}
+
 #about_bg {
   z-index: 0;
   opacity: 0.9;
