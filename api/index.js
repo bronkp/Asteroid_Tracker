@@ -7,7 +7,6 @@ app.use(express.static(__dirname + "/public"));
 var path = require("path");
 const port = 3000;
 app.get("/raw", async (req, res) => {
-  console.log(dotenv.parsed.EDGE_ID)
   const readSingle = await fetch(
     
     //`https://edge-config.vercel.com/${dotenv.parsed.EDGE_ID}/item/asteroids?token=${dotenv.parsed.EDGE_TOKEN}`,
