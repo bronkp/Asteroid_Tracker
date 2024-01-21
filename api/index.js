@@ -1,7 +1,7 @@
 const express = require("express");
  require('dotenv').config()
 
-let dotenv = require('dotenv').config({path:".env"})
+//let dotenv = require('dotenv').config({path:".env"})
 const app = express();
 app.use(express.static(__dirname + "/public"));
 var path = require("path");
@@ -11,7 +11,7 @@ app.get("/raw", async (req, res) => {
   const readSingle = await fetch(
     
     //`https://edge-config.vercel.com/${dotenv.parsed.EDGE_ID}/item/asteroids?token=${dotenv.parsed.EDGE_TOKEN}`,
-    `https://edge-config.vercel.com/${process.env.EDGE_ID}/item/asteroids?token=${process.envEDGE_TOKEN}`,
+    `https://edge-config.vercel.com/${process.env.EDGE_ID}/item/asteroids?token=${process.env.EDGE_TOKEN}`,
   );
   const result = await readSingle.json();
  
