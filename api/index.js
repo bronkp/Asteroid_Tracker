@@ -1,5 +1,5 @@
 const express = require("express");
- require('dotenv').config()
+ //require('dotenv').config()
 
 //let dotenv = require('dotenv').config({path:".env"})
 const app = express();
@@ -27,7 +27,8 @@ app.get("/about", async (req, res) => {
 
 app.get("/cron", async (req, res) => {
   //checks cron key
-  if(req.query.key === dotenv.parsed.CRON_KEY){
+  //dotenv.parsed.CRON_KEY
+  if(req.query.key === process.env.CRON_KEY){
     //gets asteroids
     //gets current week span
     const today = new Date();
@@ -39,7 +40,9 @@ app.get("/cron", async (req, res) => {
       sevenFuture.getMonth() + 1
     }-${sevenFuture.getDate()}`;
     const response = await fetch(
-      `https://api.nasa.gov/neo/rest/v1/feed?start_date=${start}&end_date=${end}&api_key=${dotenv.parsed.NASA_KEY}`
+     //  `https://api.nasa.gov/neo/rest/v1/feed?start_date=${start}&end_date=${end}&api_key=${dotenv.parsed.NASA_KEY}`
+     
+      `https://api.nasa.gov/neo/rest/v1/feed?start_date=${start}&end_date=${end}&api_key=${process.env.NASA_KEY}`
     ).then((data) => {
       return data.json();
     });
@@ -92,7 +95,9 @@ cronResult = {updated:today,biggest:biggest,fastest:fastest,closest:closest,tota
       {
         method: 'PATCH',
         headers: {
-          Authorization: `Bearer ${dotenv.parsed.VERCEL_API}`,
+        
+          //  Authorization: `Bearer ${dotenv.parsed.VERCEL_API}`,
+          Authorization: `Bearer ${process.env.VERCEL_API}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
