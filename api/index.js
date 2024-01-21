@@ -1,12 +1,13 @@
 const express = require("express");
-let dotenv = require('dotenv').config({ path: `.env.local` })
+let dotenv = require('dotenv').config({path:".env.local"})
 const app = express();
 app.use(express.static(__dirname + "/public"));
 var path = require("path");
 const port = 3000;
 app.get("/raw", async (req, res) => {
+  console.log(dotenv.parsed.EDGE_ID)
   const readSingle = await fetch(
-    `https://edge-config.vercel.com/${process.env.EDGE_ID}/item/asteroids?token=${process.env.EDGE_TOKEN}`,
+    `https://edge-config.vercel.com/${dotenv.parsed.EDGE_ID}/item/asteroids?token=${dotenv.parsed.EDGE_TOKEN}`,
   );
   const result = await readSingle.json();
  
@@ -23,7 +24,7 @@ app.get("/about", async (req, res) => {
 
 app.get("/cron", async (req, res) => {
   //checks cron key
-  if(req.query.key === 'QmFjsIcHfU'){
+  if(req.query.key === dotenv.parsed.CRON_KEY){
     //gets asteroids
     //gets current week span
     const today = new Date();
@@ -35,7 +36,7 @@ app.get("/cron", async (req, res) => {
       sevenFuture.getMonth() + 1
     }-${sevenFuture.getDate()}`;
     const response = await fetch(
-      `https://api.nasa.gov/neo/rest/v1/feed?start_date=${start}&end_date=${end}&api_key=p4xlHJXtDg4lFfq5dU85dwpJ4vGkp2bnvXDNO6c8`
+      `https://api.nasa.gov/neo/rest/v1/feed?start_date=${start}&end_date=${end}&api_key=${dotenv.parsed.NASA_KEY}`
     ).then((data) => {
       return data.json();
     });
@@ -88,7 +89,7 @@ cronResult = {updated:today,biggest:biggest,fastest:fastest,closest:closest,tota
       {
         method: 'PATCH',
         headers: {
-          Authorization: `Bearer ${process.env.VERCEL_API}`,
+          Authorization: `Bearer ${dotenv.parsed.VERCEL_API}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
