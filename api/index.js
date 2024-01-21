@@ -1,6 +1,5 @@
 const express = require("express");
-require('dotenv').config()
-let dotenv = require('dotenv').config()
+let dotenv = require('dotenv').config({ path: `.env` })
 const app = express();
 app.use(express.static(__dirname + "/public"));
 var path = require("path");
