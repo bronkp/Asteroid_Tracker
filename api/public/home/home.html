@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport"  content="width=800">
+    <meta name="viewport" content="width=800" />
 
     <title>Asteroids</title>
     <link rel="stylesheet" href="/css/styles.css" />
@@ -15,15 +15,11 @@
     <div id="bg"></div>
     <div id="page">
       <div class="header">
-        
-
-          <h1>Asteroid Forecast</h1>
-          <div>
-
-            <button>Home</button>
-            <button  onclick="window.location.href='/about';">About</button>
-          </div>
-        
+        <h1>Asteroid Forecast</h1>
+        <div>
+          <button>Home</button>
+          <button onclick="window.location.href='/about';">About</button>
+        </div>
       </div>
       <div id="records">
         <div id="allObjects">0 objects will pass by earth this week</div>
@@ -53,43 +49,57 @@
               </p>
             </div>
           </div>
-          <div id="footballField">
+          <div id="footballField"></div>
+          <p
+            style="
+              bottom: 0.5em;
+              right: 1em;
+              position: absolute;
+              font-size: 0.5em;
+            "
+          >
+            Football field (360 feet)
+          </p>
         </div>
-        <p style="bottom:0.5em; right:1em; position:  absolute;font-size: 0.5em;">
-
-          Football field (360 feet)
-        </p>
-        </div>
-        <div class="record_head" style="margin-top:0em;">
+        <div class="record_head" style="margin-top: 0em">
           <h1>Fastest</h1>
         </div>
         <div class="stats">
-        <div id="fastest">Loading...</div></div>
+          <div id="fastest">Loading...</div>
+        </div>
         <div id="fastContainer">
           <p>Distance travelled by asteroid in an hour</p>
           <div id="asteroidSpeed"></div>
-          <p>Distance travelled by Lockheed SR-71 Blackbird in an hour (2,200 mph)</p>
+          <p>
+            Distance travelled by Lockheed SR-71 Blackbird in an hour (2,200
+            mph)
+          </p>
           <div id="blackbird"></div>
         </div>
         <div class="record_head">
           <h1>Closest</h1>
         </div>
         <div class="stats">
-        <div id="closest">Loading...</div></div>
-        <div id="closestContainer">
-    <div id="earth_scale">
-          <p style=" top:1em">Scale of earth to jupiter</p>
-          <div id="big_jupiter"></div>
-          <div id="earth"></div>
+          <div id="closest">Loading...</div>
         </div>
-  <p >Distance between object and earth represented by jupiters</p>
-
-          <div id="earthJupiters">
+        <div id="closestContainer">
+          <div id="earth_scale">
+            <p style="top: 1em">Scale of earth to jupiter</p>
+            <div id="big_jupiter"></div>
+            <div id="earth"></div>
           </div>
+          <p>Distance between object and earth represented by jupiters</p>
+
+          <div id="earthJupiters"></div>
         </div>
       </div>
-         
-          <div id="footer"> <p style="padding:0em;">rorysaxton@gmail.com</p><button style="padding:0em;" onclick="window.location.href='/about';">About</button></div>
+
+      <div id="footer">
+        <p style="padding: 0em">rorysaxton@gmail.com</p>
+        <button style="padding: 0em" onclick="window.location.href='/about';">
+          About
+        </button>
+      </div>
     </div>
   </body>
   <script>
@@ -97,8 +107,6 @@
       const a = await fetch("/raw").then((data) => {
         return data.json();
       });
-      
-    
 
       document.getElementById(
         "allObjects"
@@ -132,7 +140,7 @@
       ).toLocaleString()} feet, it will pass at ${Math.round(
         a.biggest.speed
       ).toLocaleString()} miles per hour at a distance of ${Math.round(
-       a.biggest.distance
+        a.biggest.distance
       ).toLocaleString()} miles</p>`;
       document.getElementById("footballField").style.height = `${
         (30 * 360) / a.biggest.diameter.estimated_diameter_max
@@ -161,15 +169,18 @@
         element.appendChild(jupiter);
         jupiterCount++;
       }
-     
+
       var x = document.getElementsByClassName("jupiter");
       for (var i = 0; i < x.length; i++) {
         x[i].style.width = `${30 / jupiterCount}em`;
         x[i].style.height = `${30 / jupiterCount}em`;
       }
-      
-     
-      console.log({ biggest: a.biggest, closest: a.closest, fastest: a.fastest });
+
+      console.log({
+        biggest: a.biggest,
+        closest: a.closest,
+        fastest: a.fastest,
+      });
     }
     getData();
   </script>
