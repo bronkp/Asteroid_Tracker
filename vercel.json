@@ -3,7 +3,7 @@
  
   "crons": [
     {
-      "path": "/cron?key=QmFjsIcHfU",
+      "path": "/cron",
       "schedule": "0 5 * * *"
     }
   ]
