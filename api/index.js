@@ -24,7 +24,7 @@ app.get("/about", async (req, res) => {
 
 app.get("/cron", async (req, res) => {
   //checks cron key
-  if(req.query.key === 'QmFjsIcHfU'){
+  if(req.query.key === process.env.CRON_KEY){
     //gets asteroids
     //gets current week span
     const today = new Date();
@@ -36,7 +36,7 @@ app.get("/cron", async (req, res) => {
       sevenFuture.getMonth() + 1
     }-${sevenFuture.getDate()}`;
     const response = await fetch(
-      `https://api.nasa.gov/neo/rest/v1/feed?start_date=${start}&end_date=${end}&api_key=p4xlHJXtDg4lFfq5dU85dwpJ4vGkp2bnvXDNO6c8`
+      `https://api.nasa.gov/neo/rest/v1/feed?start_date=${start}&end_date=${end}&api_key=${process.env.NASA_KEY}`
     ).then((data) => {
       return data.json();
     });
@@ -85,7 +85,7 @@ cronResult = {updated:today,biggest:biggest,fastest:fastest,closest:closest,tota
 
 //sets current asteroid records every day
     const updateEdgeConfig = await fetch(
-      'https://api.vercel.com/v1/edge-config/ecfg_ki6drpoksydftydaxxl3fbkqsfpt/items',
+      `https://api.vercel.com/v1/edge-config/${process.env.EDGE_ID}/items`,
       {
         method: 'PATCH',
         headers: {
