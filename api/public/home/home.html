@@ -88,7 +88,7 @@
             <div id="big_jupiter"></div>
             <div id="earth"></div>
           </div>
-          <p>Distance between object and earth represented by jupiters</p>
+          <p style="text-align: center;">Distance between object and earth represented by jupiters</p>
 
           <div id="earthJupiters"></div>
         </div>
@@ -110,38 +110,38 @@
 
       document.getElementById(
         "allObjects"
-      ).innerHTML = `${a.total_objects} objects will pass by earth this week`;
+      ).innerHTML = `<b>${a.total_objects}</b> objects will pass by earth this week`;
 
       document.getElementById(
         "count"
-      ).innerHTML = `${a.hazardous} potentially hazardous asteroids passing by this week`;
+      ).innerHTML = `<b>${a.hazardous}</b> potentially hazardous asteroids passing by this week`;
       document.getElementById(
         "fastest"
-      ).innerHTML = `<p>The fastest object this week will pass at a speed of ${Math.round(
+      ).innerHTML = `<p>The fastest object this week will pass at a speed of <span>${Math.round(
         a.fastest.speed
-      ).toLocaleString()} miles per hour, at a distance of ${Math.round(
+      ).toLocaleString()}</span> miles per hour, at a distance of <span>${Math.round(
         a.fastest.distance
-      ).toLocaleString()} miles with a max size of  ${Math.round(
+      ).toLocaleString()}</span> miles with a max size of  <span>${Math.round(
         a.fastest.diameter.estimated_diameter_max
-      ).toLocaleString()} feet</p>`;
+      ).toLocaleString()}</span> feet</p>`;
       document.getElementById(
         "closest"
-      ).innerHTML = `<p>The closest object this week will pass at a distance of ${Math.round(
+      ).innerHTML = `<p>The closest object this week will pass at a distance of <span>${Math.round(
         a.closest.distance
-      ).toLocaleString()} miles, it will pass at ${Math.round(
+      ).toLocaleString()}</span> miles, it will pass at <span>${Math.round(
         a.closest.speed
-      ).toLocaleString()} miles per hour with a max size of  ${Math.round(
+      ).toLocaleString()}</span> miles per hour with a max size of <span>${Math.round(
         a.closest.diameter.estimated_diameter_max
-      ).toLocaleString()} feet</p>`;
+      ).toLocaleString()}</span> feet</p>`;
       document.getElementById(
         "biggest"
-      ).innerHTML = `<p>The biggest object this week has a max diameter ${Math.round(
+      ).innerHTML = `<p>The biggest object this week has a max diameter <span>${Math.round(
         a.biggest.diameter.estimated_diameter_max
-      ).toLocaleString()} feet, it will pass at ${Math.round(
+      ).toLocaleString()}</span> feet, it will pass at <span>${Math.round(
         a.biggest.speed
-      ).toLocaleString()} miles per hour at a distance of ${Math.round(
+      ).toLocaleString()}</span> miles per hour at a distance of <span>${Math.round(
         a.biggest.distance
-      ).toLocaleString()} miles</p>`;
+      ).toLocaleString()}</span> miles</p>`;
       document.getElementById("footballField").style.height = `${
         (30 * 360) / a.biggest.diameter.estimated_diameter_max
       }em`;
