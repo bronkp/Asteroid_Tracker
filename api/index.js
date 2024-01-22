@@ -24,8 +24,8 @@ app.get("/about", async (req, res) => {
 
 app.get("/cron", async (req, res) => {
   //checks cron key
-  const authHeader = req.headers.get('authorization');
-  
+  const authHeader = req.headers;
+  res.send({yo:authHeader})
   if(authHeader===`Bearer ${process.env.CRON_SECRET}`){
     //gets asteroids
     //gets current week span
