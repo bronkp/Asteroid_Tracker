@@ -223,12 +223,7 @@ p span{
   color:var(--pop);
 }
 
-max-width: 75vw;
 
-padding-top: 1em;
-padding-bottom: 1em;
-  min-width: 32em;
-}
 .stats p{
     padding-left: 1em;
     padding-right: 1em;
