@@ -7,9 +7,9 @@
       "schedule": "0 5 * * *"
     }
   ],
-  "functions": {
-    "api/*": {
-      "runtime": "nodejs18"
+  
+    "engines": {
+      "node": "18.x"
     }
-  }
+  
 }
