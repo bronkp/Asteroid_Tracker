@@ -142,6 +142,7 @@ app.get("/cron", async (req, res) => {
       );
       const result = await updateEdgeConfig.json();
       res.send({ message: "success" });
+      console.log(result)
     } catch (error) {
       res.send({ message: "error" });
     }
