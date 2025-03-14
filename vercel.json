@@ -6,5 +6,10 @@
       "path": "/cron",
       "schedule": "0 5 * * *"
     }
-  ]
+  ],
+  "functions": {
+    "api/*": {
+      "runtime": "nodejs18.x"
+    }
+  }
 }
